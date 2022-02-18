@@ -1,7 +1,7 @@
 import React from "react";
 import Container from 'react-bootstrap/Container';
-import { Navbar, Nav, Form, FormControl } from 'react-bootstrap';
-import { FaPaw, FaCog, FaUser } from "react-icons/fa";
+import { Navbar, Nav, Form, InputGroup, Button } from 'react-bootstrap';
+import { FaPaw, FaCog, FaUser, FaSearch } from "react-icons/fa";
 import { MobileView } from "react-device-detect";
 import logo from '../img/logo.png';
 
@@ -22,14 +22,15 @@ export default class NavBar extends React.Component<any, any> {
                             <Nav.Link href="/">Contacto</Nav.Link>
                         </Nav>
                         <Nav className="ms-auto">
-                        <Form className="d-flex">
-                            <FormControl
-                            type="search"
-                            placeholder="Buscar"
-                            className="me-2"
-                            aria-label="Search"
-                            />
-                        </Form>
+                            <Form className="d-flex me-3">
+                                <InputGroup>
+                                    <Form.Control
+                                    type="search"
+                                    aria-label="Search"
+                                    />
+                                    <Button variant="light" className='search-btn'><FaSearch /></Button>
+                                </InputGroup>
+                            </Form>
                             <Nav.Link href="/" title="Rescatados">
                                 <FaPaw />
                                 <MobileView>

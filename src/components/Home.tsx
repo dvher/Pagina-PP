@@ -1,11 +1,23 @@
 import React from 'react';
+import { Carousel } from 'react-bootstrap';
 
 export default class Home extends React.Component<any, any> {
     render() {
         return (
-            <div className='full-screen grid-like'>
-                <h1>Home</h1>
-            </div>
+            <Carousel className='full-screen center-screen common-background-color' controls={false} interval={null}>
+                <Carousel.Item>
+                    <h1>Hola</h1>
+                    <Carousel.Caption>
+                        Mundo
+                    </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item>
+                    <h1>Hola</h1>
+                    <Carousel.Caption>
+                        Mundo
+                    </Carousel.Caption>
+                </Carousel.Item>
+            </Carousel>
         );
     }
 }

@@ -1,28 +1,22 @@
 import React from 'react';
-import logo from './img.jpeg';
 import './App.css';
 import NavBar from './components/NavBar';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import NotFound from './components/NotFound';
+import Home from './components/Home';
 
-function App() {
-  return (
-    <div className="App">
-      <NavBar />
-      <header className="App-header">
-        <img src={logo} className="" alt="logo" width={'250'} />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends React.Component<any, any> {
+  render() {
+    return (
+      <Router>
+        <div className="App">
+          <NavBar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path='*' element={<NotFound />} />
+          </Routes>
+        </div>
+      </Router>
+    );
+  }
 }
-
-export default App;

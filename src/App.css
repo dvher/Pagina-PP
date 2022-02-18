@@ -10,6 +10,7 @@
 .full-screen {
   height: 100vh;
   width: 100vw;
+  font-size: calc(10px + 2vmin);
 }
 
 .grid-like {
@@ -18,6 +19,18 @@
   grid-gap: 1rem;
   justify-items: center;
   align-items: center;
+}
+
+.center-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.common-background-color {
+  background-color: var(--background-color);
+  color: white
 }
 
 .App-header {
@@ -41,5 +54,12 @@
 
 .logopp {
   width: 2.5em;
-  height: 10%;
+  height: 2.5em;
+}
+
+.conejito-img {
+  max-width: 80vw;
+  max-height: 80vh;
+  min-width: 20vw;
+  min-height: 20vh;
 }
