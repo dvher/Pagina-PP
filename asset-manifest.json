@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.89fd0b07.css",
+    "main.js": "/static/js/main.e0e6a6e6.js",
+    "static/js/787.e9166385.chunk.js": "/static/js/787.e9166385.chunk.js",
+    "static/media/conejito_triste.png": "/static/media/conejito_triste.f5bb87914b426d29bcfa.png",
+    "static/media/logo.png": "/static/media/logo.e38038431c63937432e5.png",
+    "index.html": "/index.html",
+    "main.89fd0b07.css.map": "/static/css/main.89fd0b07.css.map",
+    "main.e0e6a6e6.js.map": "/static/js/main.e0e6a6e6.js.map",
+    "787.e9166385.chunk.js.map": "/static/js/787.e9166385.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.89fd0b07.css",
+    "static/js/main.e0e6a6e6.js"
+  ]
+}
