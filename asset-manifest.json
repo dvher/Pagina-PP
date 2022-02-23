@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.89fd0b07.css",
-    "main.js": "/static/js/main.e0e6a6e6.js",
-    "static/js/787.e9166385.chunk.js": "/static/js/787.e9166385.chunk.js",
-    "static/media/conejito_triste.png": "/static/media/conejito_triste.f5bb87914b426d29bcfa.png",
-    "static/media/logo.png": "/static/media/logo.e38038431c63937432e5.png",
-    "index.html": "/index.html",
-    "main.89fd0b07.css.map": "/static/css/main.89fd0b07.css.map",
-    "main.e0e6a6e6.js.map": "/static/js/main.e0e6a6e6.js.map",
-    "787.e9166385.chunk.js.map": "/static/js/787.e9166385.chunk.js.map"
+    "main.css": "/Pagina-PP/static/css/main.89fd0b07.css",
+    "main.js": "/Pagina-PP/static/js/main.d5424da8.js",
+    "static/js/787.e9166385.chunk.js": "/Pagina-PP/static/js/787.e9166385.chunk.js",
+    "static/media/conejito_triste.png": "/Pagina-PP/static/media/conejito_triste.f5bb87914b426d29bcfa.png",
+    "static/media/logo.png": "/Pagina-PP/static/media/logo.e38038431c63937432e5.png",
+    "index.html": "/Pagina-PP/index.html",
+    "main.89fd0b07.css.map": "/Pagina-PP/static/css/main.89fd0b07.css.map",
+    "main.d5424da8.js.map": "/Pagina-PP/static/js/main.d5424da8.js.map",
+    "787.e9166385.chunk.js.map": "/Pagina-PP/static/js/787.e9166385.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.89fd0b07.css",
-    "static/js/main.e0e6a6e6.js"
+    "static/js/main.d5424da8.js"
   ]
 }
