@@ -1,9 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-import isAdmin from "../reducers/IsAdmin";
+import status from "../reducers/IsAdmin";
 
 const store = configureStore({
     reducer: {
-        isAdmin: isAdmin,
+        status
     },
 });
 

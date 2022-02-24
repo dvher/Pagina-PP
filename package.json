@@ -1,5 +1,5 @@
 {
-  "homepage": "https://dvher.github.io/",
+  "homepage": "https://dvher.github.io/Pagina-PP",
   "name": "reactpp",
   "version": "0.1.0",
   "private": true,
@@ -22,6 +22,9 @@
     "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.0",
     "redux": "^4.1.2",
+    "redux-persist": "^6.0.0",
+    "redux-persist-encrypted-async-storage": "github:chaudhryjunaid/redux-persist-encrypted-async-storage#master",
+    "redux-persist-transform-encrypt": "^3.0.1",
     "typescript": "^4.5.5",
     "web-vitals": "^2.1.4"
   },

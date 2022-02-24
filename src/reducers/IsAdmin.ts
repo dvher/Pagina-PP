@@ -1,23 +1,23 @@
 const initialState = {
-    isAdmin: false
+    status: false
 }
 
-const isAdmin = (state = initialState, action: {type: string}) => {
+const status = (state = initialState, action: {type: string}) => {
     console.log(action)
     switch(action.type) {
         case 'SET_IS_ADMIN':
             return {
                 ...state,
-                isAdmin: true
+                status: true
             };
         case 'UNSET_IS_ADMIN':
             return {
                 ...state,
-                isAdmin: false
+                status: false
             }
         default:
             return state;
     }
 }
 
-export default isAdmin;
+export default status;

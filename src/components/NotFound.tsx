@@ -4,7 +4,7 @@ import { useAppDispatch } from '../app/hooks';
 export default function NotFound(props: any) {
     document.title = 'Error 404';
     const dispatch = useAppDispatch();
-    dispatch({ type: 'SET_IS_ADMIN' });
+    dispatch({ type: 'UNSET_IS_ADMIN' });
     return (
         <div className='full-screen center-screen common-background-color'>
             <h1 style={{fontSize: '2em', fontWeight: 'bold'}}>Error 404</h1>

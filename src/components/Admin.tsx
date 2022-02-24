@@ -2,7 +2,7 @@ import { useAppSelector } from "../app/hooks";
 import { useAppDispatch } from "../app/hooks";
 
 const IsAdmin = () => {
-    return useAppSelector(state => state.isAdmin);
+    return useAppSelector(state => state.status);
 }
 
 export default function Admin(props: any) {
