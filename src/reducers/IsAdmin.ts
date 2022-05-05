@@ -3,7 +3,6 @@ const initialState = {
 }
 
 const status = (state = initialState, action: {type: string}) => {
-    console.log(action)
     switch(action.type) {
         case 'SET_IS_ADMIN':
             return {
@@ -16,7 +15,9 @@ const status = (state = initialState, action: {type: string}) => {
                 status: false
             }
         default:
-            return state;
+            return state ?? {
+                status: false
+            }
     }
 }
 
