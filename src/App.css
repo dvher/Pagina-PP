@@ -1,10 +1,15 @@
 :root {
-  --background-color: #f18a93;
+  --primary-background-color: #f18a93;
+  --secondary-background-color: #ECF1EE;
 }
 
-.App {
-  text-align: center;
-  background-color: var(--background-color);
+::-webkit-scrollbar { 
+  width: 0;  /* Safari and Chrome */
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #FF0000;
 }
 
 .full-screen {
@@ -29,12 +34,17 @@
 }
 
 .common-background-color {
-  background-color: var(--background-color);
+  background-color: var(--primary-background-color);
   color: white
 }
 
+.secondary-background-color {
+  background-color: var(--secondary-background-color);
+  color: black
+}
+
 .App-header {
-  background-color: var(--background-color);
+  background-color: var(--primary-background-color);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -49,7 +59,7 @@
 }
 
 .navbar {
-  background-color: var(--background-color);
+  background-color: var(--primary-background-color);
 }
 
 .logopp {

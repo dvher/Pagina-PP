@@ -1,20 +1,21 @@
-import { Carousel } from 'react-bootstrap';
+import AboutUs from './AboutUs';
+import Noticias from './Noticias';
+import Care from './Care';
+import Colaborators from './Colaborators';
+import Contact from './Contact';
+import HappyEndings from './HappyEndings';
+import DonateNow from './DonateNow';
 
 export default function Home(props: any) {
     return (
-        <Carousel className='full-screen center-screen common-background-color' controls={false} interval={null}>
-            <Carousel.Item>
-                <h1>Hola</h1>
-                <Carousel.Caption>
-                    Mundo
-                </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-                <h1>Hola</h1>
-                <Carousel.Caption>
-                    Mundo
-                </Carousel.Caption>
-            </Carousel.Item>
-        </Carousel>
+        <>
+            <Noticias effect={props.useEffect} />
+            <AboutUs effect={props.useEffect} />
+            <DonateNow effect={props.useEffect} />
+            <Care effect={props.useEffect} />
+            <HappyEndings effect={props.useEffect} />
+            <Colaborators effect={props.useEffect} />
+            <Contact effect={props.useEffect} />
+        </>
     );
 }

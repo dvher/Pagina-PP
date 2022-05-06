@@ -20,8 +20,10 @@ const reducer = persistReducer(
   State
 );
 
-export default () => {
+const x =  () => {
   let store = createStore(reducer)
   let persistor = persistStore(store)
   return { store, persistor }
 }
+
+export default x;
