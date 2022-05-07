@@ -5,9 +5,15 @@ import { MobileView } from "react-device-detect";
 import logo from '../img/logo.png';
 import { useAppSelector } from '../app/hooks';
 
+const IsAdmin = () => {
+    return useAppSelector(state => state);
+}
+
 export default function NavBar(props: any) {
 
-    let isAdmin = useAppSelector(state => state);
+    const isAdmin = IsAdmin().status;
+    const isLogged = IsAdmin().user;
+
     return (
         <Navbar collapseOnSelect expand='lg' variant='light' className='navbar' fixed="top">
             <Container fluid>
@@ -16,10 +22,10 @@ export default function NavBar(props: any) {
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mr-auto">
                         <Nav.Link href="/">Inicio</Nav.Link>
-                        <Nav.Link href="/">Noticias</Nav.Link>
-                        <Nav.Link href="/">Adopciones</Nav.Link>
-                        <Nav.Link href="/">Blog</Nav.Link>
-                        <Nav.Link href="/">Contacto</Nav.Link>
+                        <Nav.Link href="/noticias">Noticias</Nav.Link>
+                        <Nav.Link href="/adopciones">Adopciones</Nav.Link>
+                        <Nav.Link href="/blog">Blog</Nav.Link>
+                        <Nav.Link href="/contacto">Contacto</Nav.Link>
                     </Nav>
                     <Nav className="ms-auto">
                         <Form className="d-flex me-3">
@@ -31,18 +37,38 @@ export default function NavBar(props: any) {
                                 <Button variant="light" className='search-btn'><FaSearch /></Button>
                             </InputGroup>
                         </Form>
-                        <Nav.Link href="/" title="Rescatados">
+                        <Nav.Link href="/rescatados" title="Rescatados">
                             <FaPaw />
                             <MobileView>
                                 Rescatados
                             </MobileView>
                         </Nav.Link>
-                        <Nav.Link href="/" title="Usuario">
-                            <FaUser />
-                            <MobileView>
-                                Usuario
-                            </MobileView>
-                        </Nav.Link>
+                        {
+                            isLogged ? (
+                                isAdmin ? (
+                                    <Nav.Link href="/login" title="Admin">
+                                        <FaUser />
+                                        <MobileView>
+                                            Admin
+                                        </MobileView>
+                                    </Nav.Link>
+                                ) : (
+                                    <Nav.Link href="/login" title="Usuario">
+                                        <FaUser />
+                                        <MobileView>
+                                            Usuario
+                                        </MobileView>
+                                    </Nav.Link>
+                                )
+                            ) : (
+                                <Nav.Link href="/login" title="Iniciar Sesión">
+                                    <FaUser />
+                                    <MobileView>
+                                        Iniciar Sesión
+                                    </MobileView>
+                                </Nav.Link>
+                            )
+                        }
                         <Nav.Link href="/" title="Configuración">
                             <FaCog />
                             <MobileView>

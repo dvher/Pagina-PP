@@ -43,6 +43,24 @@
   color: black
 }
 
+.register-container {
+  background-color: #FAA;
+  border-radius: 10px;
+  width: 15em;
+  height: 15em;
+}
+
+.login-container {
+  background-color: #FAA;
+  border-radius: 10px;
+  width: 15em;
+  height: 12em;
+}
+
+.signup-button {
+  background-color: var(--primary-background-color);
+}
+
 .App-header {
   background-color: var(--primary-background-color);
   min-height: 100vh;
