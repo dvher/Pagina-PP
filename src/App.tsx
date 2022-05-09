@@ -1,8 +1,6 @@
 /*
 *TODO:
-* - Add authentication
 * - Modify Home elements
-* - Add functionality to login and signup
 */
 import { useEffect } from 'react';
 import './App.css';
@@ -13,6 +11,7 @@ import Home from './components/Home';
 import Admin from './components/Admin';
 import Login from './components/Login';
 import Register from './components/Register';
+import Logout from './components/Logout';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import SP from './config/configureStore';
@@ -36,6 +35,7 @@ export default function App() {
               <Route path='/admin' element={<Admin />} />
               <Route path='/login' element={<Login />} />
               <Route path='/register' element={<Register />} />
+              <Route path='/logout' element={<Logout />} />
             </Routes>
           </div>
         </Router>

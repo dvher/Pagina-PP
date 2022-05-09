@@ -4,8 +4,9 @@
 }
 
 ::-webkit-scrollbar { 
-  width: 0;  /* Safari and Chrome */
-  background: transparent;
+  background: var(--primary-background-color);
+  width: 0;
+
 }
 
 ::-webkit-scrollbar-thumb {

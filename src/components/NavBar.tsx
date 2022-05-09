@@ -1,5 +1,5 @@
 import Container from 'react-bootstrap/Container';
-import { Navbar, Nav, Form, InputGroup, Button } from 'react-bootstrap';
+import { Navbar, Nav, Form, InputGroup, Button, NavDropdown } from 'react-bootstrap';
 import { FaPaw, FaCog, FaUser, FaSearch } from "react-icons/fa";
 import { MobileView } from "react-device-detect";
 import logo from '../img/logo.png';
@@ -46,19 +46,14 @@ export default function NavBar(props: any) {
                         {
                             isLogged ? (
                                 isAdmin ? (
-                                    <Nav.Link href="/login" title="Admin">
-                                        <FaUser />
-                                        <MobileView>
-                                            Admin
-                                        </MobileView>
-                                    </Nav.Link>
+                                    <NavDropdown title={<><FaUser /><MobileView>Admin</MobileView></>} align="end">
+                                        <NavDropdown.Item href="/admin">Panel de administración</NavDropdown.Item>
+                                        <NavDropdown.Item href="/logout">Cerrar sesión</NavDropdown.Item>
+                                    </NavDropdown>
                                 ) : (
-                                    <Nav.Link href="/login" title="Usuario">
-                                        <FaUser />
-                                        <MobileView>
-                                            Usuario
-                                        </MobileView>
-                                    </Nav.Link>
+                                    <NavDropdown title={<><FaUser /><MobileView>Usuario</MobileView></>} align="end">
+                                        <NavDropdown.Item href="/logout">Cerrar sesión</NavDropdown.Item>
+                                    </NavDropdown>
                                 )
                             ) : (
                                 <Nav.Link href="/login" title="Iniciar Sesión">
