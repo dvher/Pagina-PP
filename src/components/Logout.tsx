@@ -6,7 +6,7 @@ export default function Logout(props: any) {
     return <div className="full-screen center-screen common-background-color">
         {setTimeout(() => {
             window.location.href = "/";
-        }, 10)}
+        }, 1)}
 
     </div>;
 }

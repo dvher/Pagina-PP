@@ -54,8 +54,7 @@
 .login-container {
   background-color: #FAA;
   border-radius: 10px;
-  width: 15em;
-  height: 12em;
+  padding: 0 3rem 3rem 3rem;
 }
 
 .signup-button {
