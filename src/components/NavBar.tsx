@@ -11,10 +11,11 @@ const IsAdmin = () => {
     return useAppSelector(state => state);
 }
 
-export default function NavBar(props: any) {
+export default function NavBar() {
 
     const isAdmin = IsAdmin().status;
     const isLogged = IsAdmin().user;
+    const name = IsAdmin().name;
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
 
@@ -47,11 +48,14 @@ export default function NavBar(props: any) {
                                 isLogged ? (
                                     isAdmin ? (
                                         <NavDropdown title={isMobile ? 'Admin' : <FaUser />} align={isMobile ? "start" : "end"}>
+                                            <NavDropdown.ItemText>{name}</NavDropdown.ItemText>
                                             <NavDropdown.Item href="/admin">Panel de administración</NavDropdown.Item>
-                                            <NavDropdown.Item href="/logout">Cerrar sesión</NavDropdown.Item>
+                                            <NavDropdown.Item target='if' href="/logout">Cerrar sesión</NavDropdown.Item>
+                                            <iframe hidden title='if' name='if'></iframe>
                                         </NavDropdown>
                                     ) : (
                                         <NavDropdown title={isMobile ? 'Usuario' : <FaUser />} align="end">
+                                            <NavDropdown.ItemText>{name}</NavDropdown.ItemText>
                                             <NavDropdown.Item onClick={() => window.location.href='/logout'}>Cerrar sesión</NavDropdown.Item>
                                         </NavDropdown>
                                     )
