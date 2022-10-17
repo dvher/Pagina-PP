@@ -1,0 +1,11 @@
+:root {
+  --primary-background-color: #f18a93;
+  --secondary-background-color: #ECF1EE;
+}
+
+#root{
+  height: 100vh;
+  width: 100vw;
+  max-width: 100%;
+  font-size: 1rem;
+}
