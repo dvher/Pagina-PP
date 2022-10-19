@@ -6,7 +6,7 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import logo from '../assets/img/logo.svg';
 
 const Nav = styled.div`
-    grid-column: content-start / content-end;
+    grid-area: n;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -33,7 +33,7 @@ function Navbar() {
         <Router>
             <Nav>
                 <Ul>
-                    <Li><img src= {logo} width= "90rem"></img></Li>
+                    <Li><img src={logo} width="90rem"></img></Li>
                     <Li><Link to="/Inicio"> Inicio </Link></Li>
                     <Li><Link to="/Noticias"> Noticias </Link></Li>
                     <Li><Link to="/Adopciones"> Adopciones </Link></Li>
