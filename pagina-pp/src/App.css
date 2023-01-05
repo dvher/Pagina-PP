@@ -1,9 +1,9 @@
 :root {
   --primary-background-color: #f18a93;
-  --secondary-background-color: #ECF1EE;
+  --secondary-background-color: #ecf1ee;
 }
 
-#root{
+#root {
   height: 100vh;
   width: 100vw;
   max-width: 100%;

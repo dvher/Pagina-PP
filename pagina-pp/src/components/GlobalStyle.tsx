@@ -1,6 +1,5 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 
- 
 const GlobalStyle = createGlobalStyle`
   body {
     font-family: Rubik, Lato;
@@ -36,5 +35,5 @@ const GlobalStyle = createGlobalStyle`
     font-family:Lato;
   }
 `;
- 
+
 export default GlobalStyle;
