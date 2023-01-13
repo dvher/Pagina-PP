@@ -48,8 +48,9 @@ const Primary = styled.button`
   color: white;
   font-family: Rubik;
   font-weight: 600;
+  font-size: 1.2rem;
   width: 20vw;
-  height: 2.5rem;
+  height: 2.7rem;
   border: none;
   margin-right: 4vw;
 `;
@@ -59,8 +60,9 @@ const Secondary = styled.button`
   border-radius: 3rem;
   font-family: Rubik;
   font-weight: 600;
+  font-size: 1.2rem;
   width: 20vw;
-  height: 2.5rem;
+  height: 2.7rem;
   border: none;
   border: 0.13rem solid black;
   color: black;
@@ -84,9 +86,7 @@ function Hero() {
             Descripcion de la fundacion text of the printing and typesetting
             industry. Lorem Ipsum has been the industry's standard dummy text
             ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged.
+            and scrambled it to make a type specimen book.
           </Body>
 
           <div>

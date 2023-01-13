@@ -3,16 +3,16 @@ import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
-import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import logo from "../assets/img/logo.svg";
 import AccountCircle from "@mui/icons-material/AccountCircle";
+import { NavLink } from "react-router-dom";
+import Stack from "@mui/material/Stack";
 
-const pages = ["Inicio", "Noticias", "Adopciones", "Blog", "Contacto"];
+const pages = ["Inicio", "Adopciones", "Blog", "Contacto"];
 
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
@@ -37,6 +37,10 @@ function Navbar() {
     setAnchorElUser(null);
   };
 
+  let activeStyle = {
+    textDecoration: "underline",
+  };
+
   return (
     <AppBar
       position="static"
@@ -55,7 +59,7 @@ function Navbar() {
             />
           </IconButton>
 
-          {/* Hamburger main menu */}
+          {/* Hamburger MAIN menu */}
           <Box
             sx={{
               flexGrow: 1,
@@ -90,21 +94,20 @@ function Navbar() {
                 display: { xs: "block", md: "none", color: "black" },
               }}
             >
+              {/* Hamburger MAIN menu END*/}
+
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography
-                    noWrap
-                    component="a"
-                    href="/"
-                    sx={{
-                      fontFamily: "Rubik",
-                      color: "black",
-                      textDecoration: "none",
-                    }}
-                    textAlign="center"
-                  >
-                    {page}
-                  </Typography>
+                  <Box>
+                    <NavLink
+                      style={({ isActive }) =>
+                        isActive ? activeStyle : undefined
+                      }
+                      to={`/${page}`}
+                    >
+                      {page}
+                    </NavLink>
+                  </Box>
                 </MenuItem>
               ))}
             </Menu>
@@ -112,58 +115,39 @@ function Navbar() {
 
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
-              <Button
-                variant="text"
-                component="a"
-                href="/"
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{
-                  fontFamily: "Rubik",
-                  m: 2,
-                  color: "black",
-                  textTransform: "none",
-                }}
-              >
-                {page}
-              </Button>
+              <Box key={page} sx={{ m: 2 }}>
+                <NavLink
+                  style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                  to={`/${page}`}
+                >
+                  {page}
+                </NavLink>
+              </Box>
             ))}
           </Box>
 
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
-            <Button
-              variant="text"
-              component="a"
-              href="/"
-              sx={{
-                mr: 2,
-                display: { xs: "flex", md: "flex" },
-                fontFamily: "Rubik",
-                color: "black",
-                textTransform: "none",
-              }}
-              startIcon={<AccountCircle sx={{ color: "black" }} />}
-            >
-              Iniciar Sesion
-            </Button>
+            <Stack direction="row" alignItems="center" gap={1} sx={{ mr: 2 }}>
+              <AccountCircle sx={{ color: "black" }} />
+              <NavLink
+                style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                to={`/login`}
+              >
+                Iniciar Sesion
+              </NavLink>
+            </Stack>
 
-            <Button
-              variant="text"
-              component="a"
-              href="/"
-              sx={{
-                m: 2,
-                display: { xs: "flex", md: "flex" },
-                fontFamily: "Rubik",
-                color: "black",
-                textTransform: "none",
-              }}
-            >
-              Registrarse
-            </Button>
+            <Stack direction="row" alignItems="center" gap={1}>
+              <NavLink
+                style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                to={`/Registro`}
+              >
+                Registrarse
+              </NavLink>
+            </Stack>
           </Box>
 
-          {/* Hamburger User menu */}
+          {/* Hamburger USER menu */}
           <Box sx={{ display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
@@ -194,34 +178,20 @@ function Navbar() {
               }}
             >
               <MenuItem onClick={handleCloseUserMenu}>
-                <Typography
-                  noWrap
-                  component="a"
-                  href="/"
-                  sx={{
-                    fontFamily: "Rubik",
-                    color: "black",
-                    textDecoration: "none",
-                  }}
-                  textAlign="center"
+                <NavLink
+                  style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                  to={`/login`}
                 >
                   Iniciar Sesion
-                </Typography>
+                </NavLink>
               </MenuItem>
               <MenuItem onClick={handleCloseUserMenu}>
-                <Typography
-                  noWrap
-                  component="a"
-                  href="/"
-                  sx={{
-                    fontFamily: "Rubik",
-                    color: "black",
-                    textDecoration: "none",
-                  }}
-                  textAlign="center"
+                <NavLink
+                  style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                  to={`/Registro`}
                 >
                   Registrarse
-                </Typography>
+                </NavLink>
               </MenuItem>
             </Menu>
           </Box>

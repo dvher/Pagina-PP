@@ -80,7 +80,7 @@ function Casos() {
     <Background>
       <Grid>
         <Container>
-          <Title>Casos</Title>
+          <Title>Finales Felices</Title>
 
           <SubGrid>
             <Card>
