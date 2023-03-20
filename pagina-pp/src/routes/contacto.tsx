@@ -4,8 +4,6 @@ import Navbar from "../components/Navbar";
 export default function Contact() {
   return (
     <>
-      <GlobalStyle></GlobalStyle>
-      <Navbar></Navbar>
       <h1>Contacto</h1>
     </>
   );

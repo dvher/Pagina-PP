@@ -12,7 +12,7 @@ import AccountCircle from "@mui/icons-material/AccountCircle";
 import { NavLink } from "react-router-dom";
 import Stack from "@mui/material/Stack";
 
-const pages = ["Inicio", "Adopciones", "Blog", "Contacto"];
+const pages = ["Inicio", "Donaciones", "Adopciones", "Blog", "Contacto"];
 
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
