@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import Grid from "../components/Grid";
+import Footer from "../components/Footer";
+
 import Littersvg from "../assets/img/Littersand.svg";
 import Donationsvg from "../assets/img/donationsvg.svg";
 import PayOption1 from "../assets/img/payoption1.svg";
@@ -8,7 +10,8 @@ import PayOption3 from "../assets/img/payoption3.svg";
 import Webpay from "../assets/img/webpay.svg";
 import Mastercard from "../assets/img/mastercard.svg";
 import Visa from "../assets/img/visa.svg";
-import Arrow from "../assets/img/arrow.svg";
+import DrawnRightArrow from "../assets/img/drawn-right-arrow.svg";
+import ArrowRight from "../assets/img/arrow-right.svg";
 
 export interface ImgProps {
   url?: string;
@@ -23,28 +26,31 @@ const Title = styled.h1`
   place-content: center;
 `;
 
-//Hacer que la imagen se contenta en el container. Que no halla overflow o queda todo mal.
 const Background = styled.section`
-  border: solid 1px red;
-  & {
-    width: 100vw;
-    height: auto;
-    position: relative;
-    padding-block: 4rem;
-  }
+  background: url(${Donationsvg}) no-repeat center;
+  background-size: cover;
+  width: 100%;
+  padding-block: 10%;
+`;
 
-  &:before {
-    content: " ";
-    background: url(${Donationsvg});
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    position: absolute;
-    top: -100%;
-    bottom: -100%;
-    left: 0px;
-    right: 0px;
-    z-index: -1;
+const Steps = styled.div`
+  display: flex;
+  direction: row;
+  justify-content: end;
+  grid-column: 2/6;
+`;
+
+const StepsBar = styled.div`
+  background-color: white;
+  width: 40%;
+  padding: 0.4rem;
+  border-radius: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  > span {
+    padding-inline: 0.5rem;
   }
 `;
 
@@ -54,7 +60,6 @@ const DonationOptions = styled.div`
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: auto;
   grid-gap: 2rem;
-  margin-block: 2.5rem;
 `;
 
 const Card = styled.div<ImgProps>`
@@ -62,23 +67,14 @@ const Card = styled.div<ImgProps>`
   flex-direction: column;
   text-align: center;
   justify-content: ${(props) => props.justifycontent};
-  padding: 1.5rem;
   background: url(${(props) => props.url}) no-repeat center;
   background-size: contain;
+  padding: 0.4rem;
+  width: 100%;
 
-  > img,
-  a {
-    max-width: 100%;
+  > a {
     text-decoration: underline;
   }
-`;
-
-const Button = styled.button`
-  width: 100%;
-  height: 2.7rem;
-  background: white;
-  border-radius: 3rem;
-  border: none;
 `;
 
 const PaymentOption = styled.div`
@@ -88,6 +84,18 @@ const PaymentOption = styled.div`
   grid-template-columns: repeat(3, minmax(10vw, 5vw));
   grid-auto-rows: auto;
   grid-gap: 2rem;
+`;
+
+const Img = styled.img`
+  object-fit: scale-down;
+`;
+
+const Button = styled.button`
+  width: 100%;
+  height: 2.7rem;
+  background: white;
+  border-radius: 3rem;
+  border: none;
 `;
 
 const About = styled.div`
@@ -112,40 +120,59 @@ export default function Donations() {
 
       <Background>
         <Grid>
+          <Steps>
+            <StepsBar>
+              {" "}
+              <span>Plan</span> <img src={ArrowRight}></img>{" "}
+              <span>Opciones</span> <img src={ArrowRight}></img>{" "}
+              <span>Medio de Pago</span> <img src={ArrowRight}></img>{" "}
+              <span>Pago</span>
+            </StepsBar>
+          </Steps>
+
           <DonationOptions>
             <Card>
               <Button>
                 <h4>Una Vez</h4>
               </Button>
-              <p>Lorem ipsum dolor sit amet consectetur adipisic.</p>
+              <p>
+                Haz una donacion unica para aportar al cuidado de todos los
+                animalitos de la fundacion.
+              </p>
             </Card>
 
             <Card>
               <Button>
                 <h4>Mensual</h4>
               </Button>
-              <p>Lorem ipsum dolor sit amet consectetur adipisic.</p>
+              <p>
+                Inscribete a una donacion mensual, del monto que tu quieras,
+                para ayudar continuamente a nuetros pequenos.
+              </p>
             </Card>
 
             <Card>
               <Button>
                 <h4>Apadrina</h4>
               </Button>
-              <p>Lorem ipsum dolor sit amet consectetur adipisic.</p>
+              <p>
+                Elige ser el padrino de uno de nuestros rescatados y apoya
+                economicamente en su rehabilitacion.
+              </p>
             </Card>
           </DonationOptions>
 
           <PaymentOption>
             <Card url={PayOption1} justifycontent="center">
-              <img src={Webpay}></img>
+              <Img src={Webpay}></Img>
             </Card>
 
             <Card url={PayOption2} justifycontent="center">
-              <img src={Visa}></img>
+              <Img src={Visa}></Img>
             </Card>
 
             <Card url={PayOption3} justifycontent="center">
-              <img src={Mastercard}></img>
+              <Img src={Mastercard}></Img>
             </Card>
           </PaymentOption>
         </Grid>
@@ -169,12 +196,14 @@ export default function Donations() {
               make a type specimen book.
             </p>
             <a>
-              <img src={Arrow} width="28px"></img> Mas sobre nuestros finales
-              felices
+              <img src={DrawnRightArrow} width="28px"></img> Mas sobre nuestros
+              finales felices
             </a>
           </Card>
         </About>
       </Grid>
+
+      <Footer></Footer>
     </>
   );
 }
