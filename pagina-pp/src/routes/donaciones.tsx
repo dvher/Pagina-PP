@@ -103,7 +103,8 @@ const About = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 2rem;
-  margin-block: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 10rem;
 `;
 
 export default function Donations() {

@@ -5,20 +5,18 @@ import Grid from "./Grid";
 const Background = styled.section`
   & {
     width: 100vw;
-    height: auto;
+    padding-block: 5%;
     position: relative;
     margin-block: 6rem;
   }
 
   &:before {
     content: " ";
-    background: url(${casossvg});
+    background: url(${casossvg}) no-repeat center;
     background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
     position: absolute;
     top: 0%;
-    bottom: -50%;
+    bottom: 0%;
     left: 0;
     right: 0;
     z-index: -1;
