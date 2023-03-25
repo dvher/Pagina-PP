@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Grid from "../components/Grid";
 import Footer from "../components/Footer";
+import { NavLink } from "react-router-dom";
 
 import Littersvg from "../assets/img/Littersand.svg";
 import Donationsvg from "../assets/img/donationsvg.svg";
@@ -75,6 +76,9 @@ const Card = styled.div<ImgProps>`
   > a {
     text-decoration: underline;
   }
+  > a:hover {
+    color: #ffaaaa;
+  }
 `;
 
 const PaymentOption = styled.div`
@@ -96,6 +100,11 @@ const Button = styled.button`
   background: white;
   border-radius: 3rem;
   border: none;
+  cursor: pointer;
+
+  &:hover {
+    border: 0.12rem solid black;
+  }
 `;
 
 const About = styled.div`
@@ -196,10 +205,10 @@ export default function Donations() {
               when an unknown printer took a galley of type and scrambled it to
               make a type specimen book.
             </p>
-            <a>
+            <NavLink to={"/Inicio"}>
               <img src={DrawnRightArrow} width="28px"></img> Mas sobre nuestros
               finales felices
-            </a>
+            </NavLink>
           </Card>
         </About>
       </Grid>

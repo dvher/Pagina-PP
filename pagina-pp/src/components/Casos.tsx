@@ -2,6 +2,33 @@ import styled from "styled-components";
 import casossvg from "../assets/img/casos.svg";
 import Grid from "./Grid";
 
+const images = [
+  {
+    title: "wombat",
+    body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidemtotam cupiditate dolores.",
+    imgPath:
+      "https://media.australian.museum/media/dd/images/Some_image.width-800.c4eca6d.jpg",
+  },
+  {
+    title: "wombat",
+    body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidemtotam cupiditate dolores.",
+    imgPath:
+      "https://media.australian.museum/media/dd/images/Some_image.width-800.c4eca6d.jpg",
+  },
+  {
+    title: "wombat",
+    body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidemtotam cupiditate dolores.",
+    imgPath:
+      "https://media.australian.museum/media/dd/images/Some_image.width-800.c4eca6d.jpg",
+  },
+  {
+    title: "wombat",
+    body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidemtotam cupiditate dolores.",
+    imgPath:
+      "https://media.australian.museum/media/dd/images/Some_image.width-800.c4eca6d.jpg",
+  },
+];
+
 const Background = styled.section`
   & {
     width: 100vw;
@@ -71,6 +98,11 @@ const Button = styled.button`
   border: none;
   margin-top: auto;
   align-self: center;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #ffaaaa;
+  }
 `;
 
 function Casos() {
@@ -81,36 +113,15 @@ function Casos() {
           <Title>Finales Felices</Title>
 
           <SubGrid>
-            <Card>
-              <Image src="https://media.australian.museum/media/dd/images/Some_image.width-800.c4eca6d.jpg"></Image>
-              <h4>Wombat</h4>
-              <Body>
-                {" "}
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem
-                totam cupiditate dolores.
-              </Body>
-              <Button>Leer mas</Button>
-            </Card>
-            <Card>
-              <Image src="https://media.australian.museum/media/dd/images/Some_image.width-800.c4eca6d.jpg"></Image>
-              <h4>Wombat</h4>
-              <Body>
-                {" "}
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem
-                totam cupiditate dolores.
-              </Body>
-              <Button>Leer mas</Button>
-            </Card>
-            <Card>
-              <Image src="https://media.australian.museum/media/dd/images/Some_image.width-800.c4eca6d.jpg"></Image>
-              <h4>Wombat</h4>
-              <Body>
-                {" "}
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem
-                totam cupiditate dolores.
-              </Body>
-              <Button>Leer mas</Button>
-            </Card>
+            {images.map((step) => (
+              <Card>
+                <Image src={step.imgPath}></Image>
+                <h4>{step.title}</h4>
+                <Body>{step.body}</Body>
+                <Button>Leer mas</Button>
+              </Card>
+            ))}
+
             <Card>
               <Image src="https://media.australian.museum/media/dd/images/Some_image.width-800.c4eca6d.jpg"></Image>
               <h4>Wombat</h4>

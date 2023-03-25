@@ -5,6 +5,7 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import herosvg from "../assets/img/hero.svg";
 import Grid from "./Grid";
+import { NavLink } from "react-router-dom";
 
 const Background = styled.section`
   & {
@@ -53,6 +54,17 @@ const Primary = styled.button`
   height: 2.7rem;
   border: none;
   margin-right: 4vw;
+  cursor: pointer;
+
+  > a,
+  a:hover {
+    color: white;
+    text-decoration: none;
+  }
+
+  &:hover {
+    background-color: #ffaaaa;
+  }
 `;
 
 const Secondary = styled.button`
@@ -63,9 +75,17 @@ const Secondary = styled.button`
   font-size: 1.2rem;
   width: 20vw;
   height: 2.7rem;
-  border: none;
-  border: 0.13rem solid black;
-  color: black;
+  border: 0.125rem solid black;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #ffaaaa;
+    border-color: #ffaaaa;
+  }
+
+  > a:hover {
+    text-decoration: none;
+  }
 `;
 
 const SocialMedia = styled.div`
@@ -90,8 +110,12 @@ function Hero() {
           </Body>
 
           <div>
-            <Primary>Dona</Primary>
-            <Secondary>Adopta</Secondary>
+            <Primary>
+              <NavLink to={"/Donaciones"}>Dona</NavLink>
+            </Primary>
+            <Secondary>
+              <NavLink to={"/Adopciones"}>Adopciones</NavLink>
+            </Secondary>
           </div>
 
           <SocialMedia>

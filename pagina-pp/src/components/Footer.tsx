@@ -1,12 +1,15 @@
 import styled from "styled-components";
 import Grid from "../components/Grid";
-import Logo from "../assets/img/logo.svg";
+import { NavLink } from "react-router-dom";
+import Logo from "../assets/img/pnglogo.png";
 import ArrowRight from "../assets/img/arrow-right.svg";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import LocationIcon from "../assets/img/locationicon.svg";
+
+const pages = ["Inicio", "Donaciones", "Adopciones", "Blog", "Contacto"];
 
 const Container = styled.section`
   grid-column: 2/6;
@@ -54,13 +57,13 @@ const Input = styled.form`
     border-radius: 2rem;
   }
 
-  > button,
-  button:focus {
+  > button {
     box-sizing: content-box;
     background: url(${ArrowRight}) no-repeat center;
     background-size: cover;
     padding: 1rem;
     border: none;
+    cursor: pointer;
   }
 
   input:focus {
@@ -75,67 +78,99 @@ const SocialMedia = styled.div`
   justify-content: center;
   > * {
     padding: 0.7vw;
+    cursor: pointer;
   }
 `;
 
+const BottomPage = styled.div`
+  grid-column: 2/6;
+  display: flex;
+  flex-direction: row;
+  background-color: #ededed;
+  justify-content: space-around;
+  padding-block: 0.5rem;
+`;
+
 function Footer() {
+  let activeStyle = {
+    textDecoration: "underline",
+  };
+
   return (
-    <Grid>
-      <Container>
-        <Card>
-          <img src={Logo} width="100px"></img>
-          <h4>Pequenas patitas Chile</h4>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt,
-            dolor!
-          </p>
-        </Card>
+    <>
+      <Grid>
+        <Container>
+          <Card>
+            <img src={Logo} width="128px"></img>
+            <h4>Pequenas patitas Chile</h4>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Incidunt, dolor!
+            </p>
+          </Card>
 
-        <Card>
-          <h4>Enlaces</h4>
-          <a>Donaciones</a>
-          <a>Adopciones</a>
-          <a>Blog</a>
-          <a>Noticias</a>
-          <a>Contacto</a>
-        </Card>
+          <Card>
+            <h4>Enlaces</h4>
+            {pages.map((page) => (
+              <NavLink
+                style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                to={`/${page}`}
+              >
+                {page}
+              </NavLink>
+            ))}
+          </Card>
 
-        <Card>
-          <h4>Contacto</h4>
-          <Wrapper>
-            <img src={LocationIcon} width="24px"></img>
-            <span>Santiago,Chile</span>
-          </Wrapper>
-          <Wrapper>
-            <img src={LocationIcon} width="24px"></img>
-            <span>Concepcion,Chile</span>
-          </Wrapper>
-          <Wrapper>
-            <img src={LocationIcon} width="24px"></img>
-            <span>I Region,Chile</span>
-          </Wrapper>
-          <span>+56 9 12345678</span>
-        </Card>
+          <Card>
+            <h4>Contacto</h4>
+            <Wrapper>
+              <img src={LocationIcon} width="24px"></img>
+              <span>Santiago,Chile</span>
+            </Wrapper>
+            <Wrapper>
+              <img src={LocationIcon} width="24px"></img>
+              <span>Concepcion,Chile</span>
+            </Wrapper>
+            <Wrapper>
+              <img src={LocationIcon} width="24px"></img>
+              <span>I Region,Chile</span>
+            </Wrapper>
+            <span>+56 9 12345678</span>
+          </Card>
 
-        <Newsletter>
-          <h3>Suscribete a Nuestra Newsletter</h3>
+          <Newsletter>
+            <h3>Suscribete a Nuestra Newsletter</h3>
 
-          <form>
-            <Input>
-              <input type="text" name="name" />
-              <button type="submit" value="Submit"></button>
-            </Input>
-          </form>
+            <form>
+              <Input>
+                <input type="text" placeholder="E-mail" />
+                <button type="submit" value="Submit"></button>
+              </Input>
+            </form>
 
-          <SocialMedia>
-            <InstagramIcon fontSize="medium"></InstagramIcon>
-            <FacebookIcon fontSize="medium"></FacebookIcon>
-            <TwitterIcon fontSize="medium"></TwitterIcon>
-            <YouTubeIcon fontSize="medium"></YouTubeIcon>
-          </SocialMedia>
-        </Newsletter>
-      </Container>
-    </Grid>
+            <SocialMedia>
+              <a href="https://www.instagram.com/pequenaspatitaschile/?hl=es">
+                <InstagramIcon fontSize="medium"></InstagramIcon>
+              </a>
+              <a href="https://www.facebook.com/pequenaspatitas.cl/?locale=es_LA">
+                <FacebookIcon fontSize="medium"></FacebookIcon>
+              </a>
+              <a href="https://twitter.com/rescatepatitas_">
+                <TwitterIcon fontSize="medium"></TwitterIcon>
+              </a>
+              <a href="https://www.tiktok.com/@pequenaspatitaschile">
+                <YouTubeIcon fontSize="medium"></YouTubeIcon>
+              </a>
+            </SocialMedia>
+          </Newsletter>
+        </Container>
+      </Grid>
+
+      <BottomPage>
+        <span>CopyRight©2023</span>
+        <a>Privacy Policy</a>
+      </BottomPage>
+    </>
   );
 }
 
