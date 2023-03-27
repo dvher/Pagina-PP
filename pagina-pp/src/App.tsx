@@ -1,5 +1,8 @@
+import Theme from './theme';
+
+
 function App() {
-  return {};
+  return {}
 }
 
 export default App;

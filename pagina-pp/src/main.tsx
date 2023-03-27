@@ -10,6 +10,7 @@ import Adoptions from "./routes/adopciones";
 import Donations from "./routes/donaciones";
 import Navbar from "./components/Navbar";
 import GlobalStyle from "./components/GlobalStyle";
+import Theme from "./theme";
 
 const HeaderLayout = () => (
   <>
@@ -57,9 +58,9 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
-  <>
+  <Theme>
     <React.StrictMode>
       <RouterProvider router={router} />
     </React.StrictMode>
-  </>
+  </Theme>
 );

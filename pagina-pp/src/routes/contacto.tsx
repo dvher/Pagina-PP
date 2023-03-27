@@ -1,10 +1,20 @@
 import GlobalStyle from "../components/GlobalStyle";
-import Navbar from "../components/Navbar";
+import Button from "../components/Button";
+import Card from "../components/Card";
+import Image from "../components/Image";
 
 export default function Contact() {
   return (
     <>
-      <h1>Contacto</h1>
+      contacto
+      <Card>
+        <p>hola</p>
+        <Image
+          variant="default"
+          size="cover"
+          url="https://media.australian.museum/media/dd/images/Some_image.width-800.c4eca6d.jpg"
+        ></Image>
+      </Card>
     </>
   );
 }
