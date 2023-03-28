@@ -1,8 +1,7 @@
 import { ThemeProvider } from "styled-components";
-const breakpoints = ["40em", "52em", "64em"];
+const breakpoints = ["480px", "768px", "1024px"];
 
 const theme = {
-  breakpoints: ["40em", "52em", "64em"],
   colors: {
     beige: "#F0DCCF",
     pink: "#FFAAAA",
@@ -12,15 +11,11 @@ const theme = {
     white: "#FFFFFB",
   },
   fontFamily: { Rubik: "Rubik", Lato: "Lato" },
-  fontSizes: {
-    xSmall: 12,
-    small: 14,
-    default: 16,
-    xSubtitle: 20,
-    subtitle: 24,
-    xTitle: 36,
-    title: 48,
-  },
+  h1Size: ["28px", "36px", "48px"],
+  h2Size: ["24px", "28px", "36px"],
+  h3Size: ["20px", "20px", "24px"],
+  pSize: ["12px", "14px", "16px"],
+  buttonFontSize: "20px",
   fontWeight: {
     normal: 300,
     bold: 600,

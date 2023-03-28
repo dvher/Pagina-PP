@@ -133,10 +133,8 @@ export default function Donations() {
           <Steps>
             <StepsBar>
               {" "}
-              <span>Plan</span> <img src={ArrowRight}></img>{" "}
-              <span>Opciones</span> <img src={ArrowRight}></img>{" "}
-              <span>Medio de Pago</span> <img src={ArrowRight}></img>{" "}
-              <span>Pago</span>
+              <span>Plan</span> <img src={ArrowRight}></img> <span>Opciones</span> <img src={ArrowRight}></img>{" "}
+              <span>Medio de Pago</span> <img src={ArrowRight}></img> <span>Pago</span>
             </StepsBar>
           </Steps>
 
@@ -145,10 +143,7 @@ export default function Donations() {
               <Button>
                 <h4>Una Vez</h4>
               </Button>
-              <p>
-                Haz una donacion unica para aportar al cuidado de todos los
-                animalitos de la fundacion.
-              </p>
+              <p>Haz una donacion unica para aportar al cuidado de todos los animalitos de la fundacion.</p>
             </Card>
 
             <Card>
@@ -156,8 +151,7 @@ export default function Donations() {
                 <h4>Mensual</h4>
               </Button>
               <p>
-                Inscribete a una donacion mensual, del monto que tu quieras,
-                para ayudar continuamente a nuetros pequenos.
+                Inscribete a una donacion mensual, del monto que tu quieras, para ayudar continuamente a nuetros pequenos.
               </p>
             </Card>
 
@@ -165,23 +159,20 @@ export default function Donations() {
               <Button>
                 <h4>Apadrina</h4>
               </Button>
-              <p>
-                Elige ser el padrino de uno de nuestros rescatados y apoya
-                economicamente en su rehabilitacion.
-              </p>
+              <p>Elige ser el padrino de uno de nuestros rescatados y apoya economicamente en su rehabilitacion.</p>
             </Card>
           </DonationOptions>
 
           <PaymentOption>
-            <Card url={PayOption1} justifycontent="center">
+            <Card url={PayOption1} justifycontent='center'>
               <Img src={Webpay}></Img>
             </Card>
 
-            <Card url={PayOption2} justifycontent="center">
+            <Card url={PayOption2} justifycontent='center'>
               <Img src={Visa}></Img>
             </Card>
 
-            <Card url={PayOption3} justifycontent="center">
+            <Card url={PayOption3} justifycontent='center'>
               <Img src={Mastercard}></Img>
             </Card>
           </PaymentOption>
@@ -192,22 +183,15 @@ export default function Donations() {
         <About>
           <Card>
             <h2>Nuestra Mision</h2>
-            <p>
-              when an unknown printer took a galley of type and scrambled it to
-              make a type specimen book.
-            </p>
+            <p>when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
             <p>when an unknown printer took a galley of type and scrambled.</p>
           </Card>
 
           <Card>
             <h2>Nuestros Logros</h2>
-            <p>
-              when an unknown printer took a galley of type and scrambled it to
-              make a type specimen book.
-            </p>
+            <p>when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
             <NavLink to={"/Inicio"}>
-              <img src={DrawnRightArrow} width="28px"></img> Mas sobre nuestros
-              finales felices
+              <img src={DrawnRightArrow} width='28px'></img> Mas sobre nuestros finales felices
             </NavLink>
           </Card>
         </About>

@@ -6,7 +6,7 @@ const Button = styled.button`
   border-radius: 3rem;
   font-family: ${(props) => props.theme.fontFamily.Rubik};
   font-weight: ${(props) => props.theme.fontWeight.bold};
-  font-size: ${(props) => props.theme.fontSizes.xSubtitle};
+  font-size: ${(props) => props.theme.buttonFontSize};
   cursor: pointer;
   border: ${(props) => (props.withBorder ? "1px solid black" : "none")};
   &:hover {
